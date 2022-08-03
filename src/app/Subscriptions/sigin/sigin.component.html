@@ -1,0 +1,38 @@
+
+<app-header-user ></app-header-user>   
+<app-header-user-search  ></app-header-user-search> 
+ <!-- Start Categories of The Month -->
+ <section class="container   big-banner">  
+    <div class="row text-center pt-3">
+        <div class="col-lg-6 m-auto">
+            <h1 class="h1"> Sign In </h1> 
+            <form [formGroup]="loginForm"  (ngSubmit)="onSubmit()" class="search-box login-form">
+                <div class="input-form">
+                    <input type="text" placeholder="Email address" formControlName ="email">
+                </div>
+                 
+                <div class="input-form">
+                    <input type="password" placeholder="Password" formControlName ="password">
+                </div> 
+                <div class="box ">
+                    <div class="text-center">
+                        <p><a href="/#/forgetpassword"> Forgot your password? </a> | Not a member? <a href="/signup"> Sign Up</a></p>
+                    </div>
+                    <button type="submit"  class=" btn-primary">Sign in  </button>
+                </div>	
+            </form>	
+             
+        </div>
+    </div> 
+  </section>
+  
+  <section class="bg-light">
+    <div class="container py-5">
+        <div class="row text-center  py-3"> 
+            <div class="col-lg-6 m-auto">
+                <h4>Sign in now for access to job postings, reports and the CV database.</h4>
+                <a href="#" class="btn-outline">Sign In Agencies & Employers    </a>
+            </div>
+        </div>
+    </div>
+  </section>

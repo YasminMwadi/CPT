@@ -1,0 +1,60 @@
+<app-header-user></app-header-user>
+<app-header-user-search></app-header-user-search>
+<section class=" "> 
+   <div class="container py-5">
+      <div class="row text-center  py-3 loader" *ngIf="!user"> 
+          <div class="col-lg-6 m-auto">
+              <mat-spinner></mat-spinner>
+          </div>
+      </div> 
+      <div class="row   py-3">  
+        <div class="col-lg-4 "> 
+        <aside class="single_sidebar_widget post_category_widget">
+            <h4 class="widget_title">{{user ? user.firstname : 'Display name' }}</h4>
+            <ul class="list cat-list">
+                <li>
+                    <a href="dashboard" class="d-flex icon-box pointer ">
+                    <p><i class="far fa-user"></i>  Profile  </p> 
+                    </a>
+                </li>
+                <li>
+                    <a  href="dashboard-documents"   class="d-flex icon-box pointer "  > 
+                    <p><i class="far fa-file"></i>   Documents  </p> 
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard-savedjobs" class="d-flex icon-box pointer ">
+                    <p><i class="far fa-star"></i>    Saved Jobs  </p> 
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard-appliedjobs" class="d-flex icon-box pointer activeLink">
+                    <p><i class="far fa-check-square"></i>    Applied Jobs</p> 
+                    </a>
+                </li> 
+                <li>
+                    <a href="dashboard-settings" class="d-flex icon-box pointer">
+                    <p><i class="fas fa-sliders-h"></i>    Settings  </p> 
+                    </a>
+                </li>
+                <li>
+                    <a href="edit-profile" class="btn-job-apply-primary "><i class="fas fa-edit"></i>   Edit Profile  </a>
+                </li>
+            </ul>
+        </aside>
+        </div>
+        <!-- Display Dashboard page  -->
+        <div class="col-lg-8  " > 
+        <aside class="single_sidebar_widget tag_cloud_widget">
+            <h4 class="widget_title">Applied Jobs  </h4>  
+        </aside> 
+        <aside class="single_sidebar_widget tag_cloud_widget">
+            <h4 class="widget_title">       </h4>  
+            <div class="col-md-12">
+                
+            </div> 
+        </aside> 
+        </div>
+      </div>  
+   </div>
+</section>

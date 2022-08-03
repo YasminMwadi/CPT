@@ -1,0 +1,93 @@
+  <app-header-user></app-header-user> 
+  <app-header-user-search></app-header-user-search>
+   <section class=" "> 
+      <div class="container py-5">
+         <div class="row text-center  py-3 loader" *ngIf="!user"> 
+             <div class="col-lg-6 m-auto">
+                 <mat-spinner></mat-spinner>
+             </div>
+         </div> 
+         <div class="row   py-3">  
+            <div class="col-lg-4 "> 
+               <aside class="single_sidebar_widget post_category_widget">
+                  <h4 class="widget_title">{{user.firstname ? user.firstname : 'My account' }}</h4>
+                  <ul class="list cat-list">
+                     <li>
+                        <a class="d-flex icon-box pointer activeLink">
+                           <p><i class="far fa-user"></i>  Profile  </p> 
+                        </a>
+                     </li>
+                     <li>
+                        <a  href="dashboard-documents"   class="d-flex icon-box pointer"> 
+                           <p><i class="far fa-file"></i>   Documents  </p> 
+                        </a>
+                     </li>
+                     
+                     <li>
+                        <a href="dashboard-savedjobs" class="d-flex icon-box pointer">
+                           <p><i class="far fa-star"></i>    Saved Jobs  </p> 
+                        </a>
+                     </li>
+                     <li>
+                        <a href="dashboard-appliedjobs" class="d-flex icon-box pointer">
+                           <p><i class="far fa-check-square"></i>    Applied Jobs</p> 
+                        </a>
+                     </li> 
+                     <li>
+                        <a href="dashboard-settings" class="d-flex icon-box pointer">
+                           <p><i class="fas fa-sliders-h"></i>    Settings  </p> 
+                        </a> 
+                     </li>  
+                     <li>
+                        <a href="edit-profile" class="btn-job-apply-primary "><i class="fas fa-edit"></i>   Edit Profile  </a>
+                     </li>
+                  </ul>
+               </aside>
+            </div>
+            <!-- Display Dashboard page  -->
+            <div class="col-lg-8 m-auto" *ngIf="dashboardPage"> 
+               <aside class="single_sidebar_widget tag_cloud_widget">
+                  <h4 class="widget_title">Personal Information</h4>
+                  <div class="col-md-6">
+                     <p class="icon-box" *ngIf="user.phone"> <span class="align-middle"><i class="fa fa-heart"></i> </span>{{user ? user.phone : 'none' }} </p> 
+                     <p class="icon-box" *ngIf="user.email"> <span class="align-middle"><i class="fa fa-envelope"></i> </span>{{user ? user.email : 'none' }} </p>
+                     <p class="icon-box" *ngIf="user.location"> <span class="align-middle"><i class="fas fa-map-marker-alt"></i> </span>{{user ? user.location : 'none' }}  </p>
+                     <p class="icon-box" *ngIf="user.dob"> <span class="align-middle"><i class="fas fa-birthday-cake"></i> </span>{{user ? user.dob : 'none' }}  </p> 
+                     <p class="icon-box" *ngIf="user.language"> <span class="align-middle"><i class="fas fa-language"></i> </span>{{user ? user.language : 'none' }}     </p> 
+                        
+                  </div> 
+                     
+               </aside> 
+               <aside class="single_sidebar_widget tag_cloud_widget">
+                  <h4 class="widget_title">My qualifications  </h4> 
+                  <div class="col-md-12">
+                     <a *ngFor="let data of qualificationData" class="btn-job-apply pointer">{{data.name}} </a>
+                  </div>
+               </aside>
+
+               <aside class="single_sidebar_widget tag_cloud_widget">
+                  <h4 class="widget_title">Career path   </h4>
+                  
+                  <div class="col-md-12"> 
+                     <div class="comment-list" *ngFor="let data of experienceData">
+                         <div class="single-comment justify-content-between d-flex" >
+                            <div class="user justify-content-between d-flex">
+                                 <div class="thumb  career-icon"> 
+                                    <i class="fas fa-briefcase"></i>   
+                                 </div>
+                                 <div class="desc" >
+                                    <small>Experience</small><br/>
+                                    <p><b class="text-primary">{{data.title}}  </b>  <br/>
+                                       {{data.companyname}} <br/>
+                                       <small class="date">{{data.startDate}}  - {{data.endDate}} </small></p>  
+                                 </div>
+                            </div>
+                         </div>
+                     </div>
+                  </div> 
+               </aside>
+                 
+            </div>
+         </div>  
+      </div>
+   </section>
